@@ -73,7 +73,7 @@ def poc(target):
     try:
         res1 = requests.post(url = target + payload, data=data, headers=headers, verify=False)
         if res1.status_code == 200 and "url" in res1.text:
-            res2 = requests.get(url = target + payload2, headers=headers, verify=False, proxies=proxies)
+            res2 = requests.get(url = target + payload2, headers=headers, verify=False)
             if res2.status_code == 200 and "hello" in res2.text:
                 logger.info(f"[+] {target} 存在任意文件上传漏洞")
                 with open('processre.txt', 'a', encoding='utf-8') as f:
