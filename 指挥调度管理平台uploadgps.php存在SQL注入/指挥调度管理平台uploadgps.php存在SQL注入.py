@@ -64,7 +64,7 @@ def poc(target):
         'https': 'http://127.0.0.1:8080',
     }
     try:
-        res = requests.post(url=url,headers=headers,data=data,verify=False,timeout=15,proxies=proxies)
+        res = requests.post(url=url,headers=headers,data=data,verify=False,timeout=15)
 
         if res.status_code == 200 and "successed" in res.text and "msg" in res.text:
             print(f"[+]{GREEN}该url存在漏洞{target}\n{RESET}")
