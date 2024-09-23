@@ -51,7 +51,7 @@ def poc(target):
 
     try:
         res = requests.get(url=target, verify=False, proxies=proxies, allow_redirects=False)
-        res1 = requests.get(url=url, headers=headers, verify=False, proxies=proxies)
+        res1 = requests.get(url=url, headers=headers, verify=False)
 
         if res.status_code == 200:
             if res1.status_code == 200 and "status" in res1.text and "exception" not in res1.text:
