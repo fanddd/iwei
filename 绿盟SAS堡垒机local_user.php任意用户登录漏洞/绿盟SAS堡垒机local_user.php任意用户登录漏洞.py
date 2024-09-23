@@ -50,7 +50,7 @@ def poc(target):
     }
 
     try:
-        res = requests.get(url=target, verify=False, proxies=proxies, allow_redirects=False)
+        res = requests.get(url=target, verify=False, allow_redirects=False)
         res1 = requests.get(url=url, headers=headers, verify=False)
 
         if res.status_code == 200:
