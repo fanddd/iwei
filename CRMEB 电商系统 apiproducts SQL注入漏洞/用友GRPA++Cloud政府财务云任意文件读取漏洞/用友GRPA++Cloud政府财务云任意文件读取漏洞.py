@@ -53,7 +53,7 @@ def poc(target):
     }
     try:
         # 发送请求，禁用自动重定向
-        res = requests.get(url, headers=headers, verify=False, timeout=5, allow_redirects=False, proxies=proxies)
+        res = requests.get(url, headers=headers, verify=False, timeout=5, allow_redirects=False)
 
         if res.status_code == 302:
             logging.info(f"[*] 该网站存在302重定向 {target}")
