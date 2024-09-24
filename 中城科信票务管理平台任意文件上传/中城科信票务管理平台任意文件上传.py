@@ -83,7 +83,7 @@ def poc(target):
     }
 
     try:
-        res = requests.post(url=url, headers=headers, data=data, verify=False, timeout=8, proxies=proxies)
+        res = requests.post(url=url, headers=headers, data=data, verify=False, timeout=8)
 
         if res.status_code == 200 and 'asp' in res.text:
             print(f"{GREEN}[+]该网站存在文件上传漏洞，url为 {target}{RESET}")
